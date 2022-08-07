@@ -1,0 +1,15 @@
+C:\Users\17322\Desktop\C# programs\SortedLists\bin\Debug\net6.0\SortedLists.exe
+C:\Users\17322\Desktop\C# programs\SortedLists\bin\Debug\net6.0\SortedLists.deps.json
+C:\Users\17322\Desktop\C# programs\SortedLists\bin\Debug\net6.0\SortedLists.runtimeconfig.json
+C:\Users\17322\Desktop\C# programs\SortedLists\bin\Debug\net6.0\SortedLists.dll
+C:\Users\17322\Desktop\C# programs\SortedLists\bin\Debug\net6.0\SortedLists.pdb
+C:\Users\17322\Desktop\C# programs\SortedLists\obj\Debug\net6.0\SortedLists.csproj.AssemblyReference.cache
+C:\Users\17322\Desktop\C# programs\SortedLists\obj\Debug\net6.0\SortedLists.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\17322\Desktop\C# programs\SortedLists\obj\Debug\net6.0\SortedLists.AssemblyInfoInputs.cache
+C:\Users\17322\Desktop\C# programs\SortedLists\obj\Debug\net6.0\SortedLists.AssemblyInfo.cs
+C:\Users\17322\Desktop\C# programs\SortedLists\obj\Debug\net6.0\SortedLists.csproj.CoreCompileInputs.cache
+C:\Users\17322\Desktop\C# programs\SortedLists\obj\Debug\net6.0\SortedLists.dll
+C:\Users\17322\Desktop\C# programs\SortedLists\obj\Debug\net6.0\refint\SortedLists.dll
+C:\Users\17322\Desktop\C# programs\SortedLists\obj\Debug\net6.0\SortedLists.pdb
+C:\Users\17322\Desktop\C# programs\SortedLists\obj\Debug\net6.0\SortedLists.genruntimeconfig.cache
+C:\Users\17322\Desktop\C# programs\SortedLists\obj\Debug\net6.0\ref\SortedLists.dll
