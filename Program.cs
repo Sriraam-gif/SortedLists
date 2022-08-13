@@ -1,77 +1,105 @@
 ﻿using System;
 
-class Program
+class AllListsAreEmpty: Exception
 {
-
-    public static void Main(string[] args)
+    public AllListsAreEmpty(string message): base(message)
     {
-        List<List<int>> list = new List<List<int>>();
-        List<int> one = new List<int>() {};
-        List<int> two = new List<int>() {};
-        List<int> three = new List<int>() {};
 
-        list.Add(one);
-        list.Add(two);
-        list.Add(three);
-
-        List<int> sortedList = sortingLists(list);
-
-        foreach (int val in sortedList)
-        {
-            Console.Write(val + " ");
-        }
     }
+}
 
-    // Pre-Condition: The list within the lists are pre sorted in ascending order
-    //Post-Condition: The function will return a single list of numbers(from the list of list) with ascending order
-
-
-    public static List<int> sortingLists(List<List<int>> listOfLists)
+namespace SortingLists
+{
+    class Program
     {
-        List<int> sortedList = new List<int>();
-        List<int> indexes = new List<int>(); // This will hold the index of the lists with the list
 
-        for (int i = 0; i < listOfLists.Count; i++) //The list "indexes" will have 0s in the list that will represent the initial indexes of the lists within the list
+
+
+        public static void Main(string[] args)
         {
-            indexes.Add(0);
+            List<List<int>> list = new List<List<int>>(){};
+            List<int> one = new List<int>() {};
+            List<int> two = new List<int>() {4000};
+            List<int> three = new List<int>() {};
+
+            list.Add(one);
+            list.Add(two);
+            list.Add(three);
+           
+            List<int> sortedList = sortingLists(list);
+
+            foreach (int val in sortedList)
+            {
+                Console.Write(val + " ");
+            }
         }
 
-        bool condition = false;
+        // Pre-Condition: The list within the lists are pre sorted in ascending order
+        //Post-Condition: The function will return a single list of numbers(from the list of list) with ascending order
 
-        while (condition == false)
+
+        public static List<int> sortingLists(List<List<int>> listOfLists)
         {
-
-            int min = int.MaxValue;
-            int index = 0;
-
-            for (int i = 0; i < listOfLists.Count; i++)
+            bool isFullyEmpty=true; //the boolean holds value of whethetr the all the lists are empty within the list.
+            for(int i=0; i<listOfLists.Count; i++) // checks for whether the all lists within the list are empty
             {
-                if (indexes[i] < listOfLists[i].Count)
+                if(listOfLists[i].Count!=0)
                 {
-                    if (min > listOfLists[i][indexes[i]])
-                    {
-                        min = listOfLists[i][indexes[i]];
-                        index = i;
-                    }
-                }
-            }
-            sortedList.Add(min);
-            indexes[index] = indexes[index] + 1;
-
-            condition = true;
-
-            for (int i = 0; i < indexes.Count; i++) //checking for whether we need to repeat this process again
-            {
-                if (indexes[i] < listOfLists[i].Count)
-                {
-                    condition = false;
+                    isFullyEmpty=false;
                     break;
                 }
             }
+            if(isFullyEmpty==true)
+            {
+                throw new AllListsAreEmpty("User needs to enter at least one value onto one of the lists");
+            }
+            
+
+            List<int> sortedList = new List<int>();
+            List<int> indexes = new List<int>(); // This will hold the index of the lists with the list
+
+            for (int i = 0; i < listOfLists.Count; i++) //The list "indexes" will have 0s in the list that will represent the initial indexes of the lists within the list
+            {
+                indexes.Add(0);
+            }
+
+            bool condition = false;
+
+            while (condition == false)
+            {
+
+                int min = int.MaxValue;
+                int index = 0;
+
+                for (int i = 0; i < listOfLists.Count; i++)
+                {
+                    if (indexes[i] < listOfLists[i].Count)
+                    {
+                        if (min > listOfLists[i][indexes[i]])
+                        {
+                            min = listOfLists[i][indexes[i]];
+                            index = i;
+                        }
+                    }
+                }
+                sortedList.Add(min);
+                indexes[index] = indexes[index] + 1;
+
+                condition = true;
+
+                for (int i = 0; i < indexes.Count; i++) //checking for whether we need to repeat this process again
+                {
+                    if (indexes[i] < listOfLists[i].Count)
+                    {
+                        condition = false;
+                        break;
+                    }
+                }
+            }
+
+            return sortedList;
+
         }
-
-        return sortedList;
-
     }
 }
 
